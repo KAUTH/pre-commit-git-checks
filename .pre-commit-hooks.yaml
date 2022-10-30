@@ -1,0 +1,7 @@
+- id: git-signoff
+  name: Git Signoff Check
+  description: Checks your Git commit messages for a signoff (`git commit --signoff/-s`)
+  language: python
+  entry: pgchecks
+  args: [signoff]
+  stages: [commit-msg]
