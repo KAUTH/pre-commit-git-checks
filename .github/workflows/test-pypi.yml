@@ -1,0 +1,42 @@
+# This workflow will upload a Python Package to TestPyPI
+
+name: test-pypi
+
+on:
+  push:
+    branches:
+      - 'test-release/**'
+
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+
+    - name: Build package
+      # Could also use: poetry build
+      run: python -m build
+
+    - name: Check distribution's long description rendering on PyPI
+      run: twine check dist/*
+
+    # https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
+    - name: Publish package to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        user: __token__
+        # To create a token with project scope you might need to upload to
+        # TestPyPI manually the first time
+        password: ${{ secrets.TEST_PYPI_API_TOKEN_PGCHECKS }}
+        repository_url: https://test.pypi.org/legacy/
+        verbose: true
