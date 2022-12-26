@@ -1,3 +1,15 @@
+.. image:: https://github.com/KAUTH/pre-commit-git-checks/actions/workflows/tests.yml/badge.svg
+    :target: https://github.com/KAUTH/pre-commit-git-checks/actions/workflows/tests.yml
+    :alt: Build Status
+
+.. image:: https://img.shields.io/github/license/KAUTH/pre-commit-git-checks
+    :target: https://github.com/KAUTH/pre-commit-git-checks/blob/main/LICENSE
+    :alt: License
+
+.. image:: https://img.shields.io/pypi/v/pre-commit-git-checks
+    :target: https://pypi.org/project/pre-commit-git-checks/
+    :alt: Latest Version
+
 *********************
 pre-commit-git-checks
 *********************
