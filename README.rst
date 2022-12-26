@@ -83,12 +83,11 @@ In your ``.pre-commit-config.yaml`` file add:
 
 .. code:: text
 
-    repos:
-      - repo: https://github.com/KAUTH/pre-commit-git-checks
-        rev: master
-        hooks:
-          - id: git-signoff
-            stages: [commit-msg]
+  - repo: https://github.com/KAUTH/pre-commit-git-checks
+    rev: ''  # Use the SHA or tag you want to point to
+    hooks:
+      - id: git-signoff
+        stages: [commit-msg]
 
 To install the hook(s) run:
 
