@@ -10,6 +10,9 @@
     :target: https://pypi.org/project/pre-commit-git-checks/
     :alt: Latest Version
 
+.. image:: https://img.shields.io/pypi/dm/pre-commit-git-checks
+   :alt: PyPI - Downloads
+
 *********************
 pre-commit-git-checks
 *********************
